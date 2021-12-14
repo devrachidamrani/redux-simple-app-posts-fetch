@@ -13,6 +13,6 @@ export const getPosts = () => async (dispatch, getState) => {
     )
     dispatch({ type: GET_POST_SUCCESS, payload: data })
   } catch (error) {
-    dispatch({ type: GET_POST_FAIL, payload: error.stack })
+    dispatch({ type: GET_POST_FAIL, error: error.stack })
   }
 }

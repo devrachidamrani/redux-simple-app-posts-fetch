@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 const App = () => {
   const dispatch = useDispatch()
   const { posts, loading, error } = useSelector(state => state)
-
   useEffect(() => {
     dispatch(getPosts())
   }, [dispatch])
@@ -16,7 +15,7 @@ const App = () => {
       {loading ? (
         <h3>Loading posts ... </h3>
       ) : error ? (
-        <h3> Something went wrong </h3>
+        <h3> {error}</h3>
       ) : (
         <div>
           {posts.map(post => (
